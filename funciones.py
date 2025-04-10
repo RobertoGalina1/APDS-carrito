@@ -23,3 +23,15 @@ def agregar_producto(nombre,precio,cantidad):
 def mostrar_producto(lista):
     for elemento in lista:
         print(elemento)
+        
+def mostrar_resumen(lista):
+    print("RESUMEN DE COMPRAS")
+    print("-----------------------------------------------------------------------------")
+    for numero,producto in enumerate(lista):
+        print(f'{numero + 1} Producto {producto['nombre']} ||  {producto['cantidad']} x {producto['precio']} = {producto['cantidad'] * producto['precio']}')
+        print("-----------------------------------------------------------------------------")
+        
+def calcular_carrito(lista):
+    total = sum(map(lambda x:x['precio']*x['cantidad'],lista))
+    print(f"El precio total de todo el carrito es: {total}$")
+    return total

@@ -1,4 +1,4 @@
-from funciones import agregar_producto,mostrar_producto
+from funciones import agregar_producto,mostrar_producto,mostrar_resumen,calcular_carrito
 carrito = []
 respuesta = input("¿Desea agregar productos a su carrito: (no para salir)").lower()
 while respuesta != 'no':
@@ -12,4 +12,8 @@ while respuesta != 'no':
         print('Producto no agregado.')
     respuesta = input("¿Desea agregar productos a su carrito: (no para salir)").lower()
 
-mostrar_producto(carrito)
+#mostrar_producto(carrito)
+mostrar_resumen(carrito)
+total = calcular_carrito(carrito)
+
+
