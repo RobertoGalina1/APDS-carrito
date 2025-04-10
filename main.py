@@ -1,4 +1,4 @@
-from funciones import agregar_producto,mostrar_producto,mostrar_resumen,calcular_carrito
+from funciones import *
 carrito = []
 respuesta = input("¿Desea agregar productos a su carrito: (no para salir)").lower()
 while respuesta != 'no':
@@ -13,7 +13,12 @@ while respuesta != 'no':
     respuesta = input("¿Desea agregar productos a su carrito: (no para salir)").lower()
 
 #mostrar_producto(carrito)
+productos_unicos(carrito)
 mostrar_resumen(carrito)
 total = calcular_carrito(carrito)
 
 
+descuento = aplicar_descuento(total)
+total_iva = aplicar_IVA(total)
+agregar_mensajes('hola','perrito','de','la','fama',sep = '-')
+print(aplicar_descuento.__doc__)
