@@ -21,23 +21,19 @@ def agregar_producto(nombre,precio,cantidad):
     
     else:
         diccionario = {'nombre':nombre,'precio':precio,'cantidad':cantidad, 'total':precio*cantidad}
-        return diccionario
+        return diccionario   
 
-def mostrar_producto(lista):
-    """Muestra los elementos como diccionario - formato básico"""
-    for elemento in lista:
-        print(elemento)
-        
 def mostrar_resumen(lista):
     """Muestra un resumen con un formato más profesional y agradable a la vista"""
     print("RESUMEN DE COMPRAS")
     print("-----------------------------------------------------------------------------")
-    for numero,producto in enumerate(lista):
-        print(f"{numero + 1} Producto {producto['nombre']} ||  {producto['cantidad']} x {producto['precio']} = {producto['cantidad'] * producto['precio']}")
+    for numero,producto in enumerate(lista,start=1):
+        print(f"{numero} Producto {producto['nombre']} ||  {producto['cantidad']} x {producto['precio']} = {producto['cantidad'] * producto['precio']}")
         print("-----------------------------------------------------------------------------")
         #Cambie las comillas, agregar al tercer commit ese cambio
         
-def calcular_carrito(lista):
+        
+def calcular_total_carrito(lista):
     """Calcula el total de todo lo que llevamos en nuestro carrito"""
     total = sum(map(lambda x:x['precio']*x['cantidad'],lista))
     print(f"El precio total de todo el carrito es: {total}$")
@@ -75,5 +71,13 @@ def agregar_mensajes(*mensajes,**caracteristicas):
         elif k.lower() =='sep':
             palabra = v.join(palabra.split())
     print(palabra)
+
+"""
+def mostrar_producto(lista):
+Muestra los elementos como diccionario - formato básico
+    for elemento in lista:
+        print(elemento) 
+        
+"""  
     
 #agregar_mensajes('guan','paco','pedro','adios',mayus = True,sep = "-")
