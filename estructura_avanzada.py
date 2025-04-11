@@ -1,3 +1,5 @@
+
+
 def recorrer_lista(lista):
     """Version de mostrar producto usando un iter y next"""
     x = iter(lista)
@@ -39,8 +41,15 @@ def combinar_productos2(*combinaciones):
         nombre,precio,cantidad = elemento
         print(f'|| Producto {nombre} || Precio {precio:.3f} || Cantidad {cantidad}')
 
-    
+def filtrar_productos_caros(lista):
+    productos_caros = [x for x in lista if x['precio']>50]
+    return productos_caros
 
+def calcular_precios_con_descuentos(lista,descuento=10):
+    productos_descuento = [(x['precio']-x['precio']*descuento*0.01) if x['precio']>20 else x['precio'] for x in lista]
+    for producto,precio in zip(lista,productos_descuento):
+        producto['precio'] = precio
+    return lista
 
 #combinar_productos2(['carne','pollo','pescado'],[50.3,25.5,135.3],[2,1,5])
 

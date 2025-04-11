@@ -25,3 +25,13 @@ while respuesta != 'no':
 #print(aplicar_descuento.__doc__)
 
 recorrer_lista(carrito)
+
+productos = [
+    {'nombre': 'carne', 'precio': 80, 'cantidad': 2},
+    {'nombre': 'pollo', 'precio': 20, 'cantidad': 1},
+    {'nombre': 'pescado', 'precio': 120, 'cantidad': 3},
+    {'nombre': 'salmon', 'precio': 120, 'cantidad':1}
+]   
+
+print(filtrar_productos_caros(productos))
+print(calcular_precios_con_descuentos(productos))
