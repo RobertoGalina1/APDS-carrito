@@ -14,7 +14,7 @@ while respuesta != 'no':
     respuesta = input("¿Desea agregar productos a su carrito: (no para salir)").lower()
 
 #mostrar_producto(carrito)
-#productos_unicos(carrito)
+print(productos_unicos(carrito))
 #mostrar_resumen(carrito)
 #total = calcular_carrito(carrito)
 

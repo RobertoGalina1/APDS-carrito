@@ -60,7 +60,9 @@ def productos_unicos(lista):
     """Devuelve la cantidad de producto unicos y cuales son """
     unicos = set(map(lambda x: x["nombre"],lista))
     print(f'Tienes un total de {len(unicos)} productos distintos: {unicos}')
-    
+    lista_unicos = sorted(unicos)
+    return lista_unicos
+    #Cambiaremos un poco para hacer un commit 
 def agregar_mensajes(*mensajes,**caracteristicas):
     """Imprime un mensaje formado por args y caracteristicas con args"""
     palabra = " ".join(mensajes)
